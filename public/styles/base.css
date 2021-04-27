@@ -1,0 +1,42 @@
+a {
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  background-color: #111111;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body:-webkit-scrollbar {
+  display: none;
+}
+
+header {
+  width: 100%;
+}
+
+main {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  width: 375px;
+  margin: auto;
+}
+
+@media screen and (min-width: 760px) {
+  main {
+    width: 740px;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  main {
+    width: 95vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
