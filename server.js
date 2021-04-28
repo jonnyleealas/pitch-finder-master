@@ -25,10 +25,7 @@ const profile = require('./libs/profile');
 
 
 const DB = process.env.DATABASE_URL;
-const client = new pg.Client({connectionString: DB,
-  ssl: {
-    rejectUnauthorized: false
-  }});
+const client = new pg.Client(DB);
 client.on('error', err => console.error(err));
 
 const app = express();
@@ -122,7 +119,7 @@ app.use('*',(req,res) =>{
 
 client.connect()
   .then(() => {
-    app.listen(port, ()=> console.log(`fuck fuck  FUAKDKSDF on ${port}`))
+    app.listen(port, ()=> console.log(`Listening on ${port}`))
   })
 
 
