@@ -27,13 +27,16 @@ router.get(
 router.get("/callback", (req, res, next) => {
   passport.authenticate("auth0", (err, user, info) => {
     if (err) {
+      console.log("we hit an error")
       return next(err);
     }
     if (!user) {
+      console.log("didnt find user")
       return res.redirect("/login");
     }
     req.logIn(user, (err) => {
       if (err) {
+        console.log("we hit an error in log in")
         return next(err);
       }
       const returnTo = req.session.returnTo;
@@ -43,8 +46,10 @@ router.get("/callback", (req, res, next) => {
       client.query(sql, safe)
         .then(dbData => {
           if (dbData.rowCount === 0) {
+            console.log("trying to redirect /users")
             res.redirect('/users');
           } else {
+            console.log("trying to redirect to either ", returnTo, " or /events")
             res.redirect(returnTo || "/events");
           }
         });
