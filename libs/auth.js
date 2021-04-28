@@ -54,6 +54,9 @@ router.get("/callback", (req, res, next) => {
             console.log("trying to redirect to either ", returnTo, " or /events")
             res.redirect(returnTo || "/events");
           }
+        }).catch(e => {
+          console.log(e)
+          return res.redirect("/")
         });
     });
     console.log("END OF AUTHENTICATE")
