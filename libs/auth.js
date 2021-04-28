@@ -27,6 +27,7 @@ router.get(
 router.get("/callback", (req, res, next) => {
   console.log("IN CALLBACK ROUTE")
   passport.authenticate("auth0", (err, user, info) => {
+    console.log("START OF AUTHENTICATE")
     if (err) {
       console.log("we hit an error")
       return next(err);
@@ -55,6 +56,7 @@ router.get("/callback", (req, res, next) => {
           }
         });
     });
+    console.log("END OF AUTHENTICATE")
   })(req, res, next);
 });
 //handles logout
