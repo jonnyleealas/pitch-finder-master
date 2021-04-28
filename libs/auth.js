@@ -25,6 +25,7 @@ router.get(
 );
 //callback from AUTH0
 router.get("/callback", (req, res, next) => {
+  console.log("IN CALLBACK ROUTE")
   passport.authenticate("auth0", (err, user, info) => {
     if (err) {
       console.log("we hit an error")
