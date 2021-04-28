@@ -25,7 +25,10 @@ const profile = require('./libs/profile');
 
 
 const DB = process.env.DATABASE_URL;
-const client = new pg.Client({host:DB,ssl:true});
+const client = new pg.Client({connectionString: DB,
+  ssl: {
+    rejectUnauthorized: false
+  }});
 client.on('error', err => console.error(err));
 
 const app = express();
