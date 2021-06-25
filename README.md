@@ -18,7 +18,7 @@
 
 
 
-**Live**: [Link](https://pitchfinder.herokuapp.com/)
+**Live**: [Link](https://pirate-adventure.surge.sh/game.html)
 
 
 ## Overview:
