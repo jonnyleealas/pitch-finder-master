@@ -18,7 +18,7 @@
 
 
 
-**Live Link**: [Link](https://pitchfinder.herokuapp.com/)
+**Live**: [Link](https://pitchfinder.herokuapp.com/)
 
 
 ## Overview:
